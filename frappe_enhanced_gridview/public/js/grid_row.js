@@ -689,10 +689,9 @@ export default class GridRow {
 			// to get update df for the row
 			let df = fields.find((field) => field?.fieldname === col[0].fieldname);
 
-			this.set_dependant_property(df);
-
+		  this.set_dependant_property(df);
 			let colsize = col[1];
-
+          
 			let txt = this.doc
 				? frappe.format(this.doc[df.fieldname], df, null, this.doc)
 				: __(df.label, null, df.parent);
@@ -812,7 +811,7 @@ export default class GridRow {
 		}
 
 		let $col = $(
-			'<div class="col grid-static-col col-xs-' + colsize + ' search"></div>'
+			'<div class="col grid-static-col col-xs-' + colsize + ' custom-' + colsize + ' search"></div>'
 		).appendTo(this.row);
 
 		let $search_input = $(`
