@@ -15,7 +15,7 @@ export default class GridRow {
 		let me = this;
 		let render_row = true;
 
-		this.wrapper = $('<div class="grid-row"></div>');
+		this.wrapper = $('<div class="grid-row h-8"></div>');
 		this.row = $('<div class="data-row row"></div>')
 			.appendTo(this.wrapper)
 			.on("click", function (e) {

@@ -4,6 +4,9 @@
     border-radius: var(--border-radius-md);
     overflow-x: clip !important;
 
+    .h-8 {
+      height: 38px;
+    }
     .form-grid {
         border: none;
         border-radius: unset;
