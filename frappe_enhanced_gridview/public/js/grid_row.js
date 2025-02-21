@@ -16,7 +16,7 @@ export default class GridRow {
 		let render_row = true;
 
 		this.wrapper = $('<div class="grid-row h-8"></div>');
-		this.row = $('<div class="data-row row"></div>')
+		this.row = $('<div class="data-row row h-9"></div>')
 			.appendTo(this.wrapper)
 			.on("click", function (e) {
 				if (
@@ -811,7 +811,7 @@ export default class GridRow {
 		}
 
 		let $col = $(
-			'<div class="col grid-static-col col-xs-' + colsize + ' custom-' + colsize + ' search"></div>'
+			'<div class="col grid-static-col col-xs- custom-' + colsize + ' search"></div>'
 		).appendTo(this.row);
 
 		let $search_input = $(`
