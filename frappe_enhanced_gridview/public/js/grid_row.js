@@ -817,7 +817,7 @@ export default class GridRow {
 		let $search_input = $(`
 			<input
 				type="text"
-				class="form-control input-xs ${input_class}"
+				class="form-control input-xs ${input_class} custom-search"
 				title="${title}"
 				data-fieldtype="${df.fieldtype}"
 				${is_disabled}

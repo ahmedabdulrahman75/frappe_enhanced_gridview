@@ -137,3 +137,13 @@
       height: 40px;
     }
 }
+
+.custom-search {
+  background-color: white !important;
+}
+html[data-theme='dark'] {
+  .custom-search {
+    /* Specific styles for elements with class 'my-element' in dark theme */
+    background-color: black !important;
+  }
+}
