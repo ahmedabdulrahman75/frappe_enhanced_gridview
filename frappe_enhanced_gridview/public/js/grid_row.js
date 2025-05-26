@@ -273,7 +273,7 @@ export default class GridRow {
 
 			this.row_index = $(
 				`<div class="row-index col search">
-					<input type="text" class="form-control input-xs text-center" >
+					<input type="text" class="form-control input-xs text-center custom-search" >
 				</div>`
 			).appendTo(this.row);
 
