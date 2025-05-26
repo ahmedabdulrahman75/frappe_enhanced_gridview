@@ -105,11 +105,27 @@ class Custom_Grid extends Grid {
 		this.form_grid_container = this.wrapper.find(".form-grid-container");
 		this.enhanced_slider = this.wrapper.find(".enhanced-slider");
 		let me = this
-		this.enhanced_slider.on("input", function (event) {
-			const value = event.target.value;
-			me.form_grid.css("left", `-${value}px`)
-			me.setup_scrollable_width()
-		})
+                this.enhanced_slider.on("input", function (event) {
+        	    const value = event.target.value;
+                    me.form_grid.css("left", `-${value}px`);
+              	    me.setup_scrollable_width();
+        	});
+
+          this.form_grid_container.on("wheel", function (event) {
+            if (Math.abs(event.originalEvent.deltaX) > Math.abs(event.originalEvent.deltaY)) {
+              event.preventDefault();
+
+              const deltaX = event.originalEvent.deltaX;
+              const max = parseFloat(me.enhanced_slider.attr("max") || 0);
+              const currentLeft = parseFloat(me.form_grid.css("left")) || 0;
+              const newLeft = Math.max(0, Math.min(deltaX - currentLeft, max));
+              
+              me.form_grid.css("left", `${-newLeft}px`);
+              me.enhanced_slider.val(newLeft);
+              me.setup_scrollable_width();
+	    }
+          });
+          
 
 
 
